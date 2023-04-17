@@ -18,7 +18,7 @@ class UserRepository implements UserRepositoryInterface
         $name=$data->name;
         $email=$data->email;
         $password=Hash::make($data->password);
-        $responseId=User::insertGetId([
+        $responseId=User::createGetId([
                 "name"=>$name,
                 "email"=>$email,
                 "password"=>$password,
@@ -29,12 +29,10 @@ class UserRepository implements UserRepositoryInterface
     {
         $name=$data->name;
         $email=$data->email;
-        $password=Hash::make($data->password);
         $responseId=User::where('id',$data->id)
         ->update([
                 "name"=>$name,
                 "email"=>$email,
-                "password"=>$password,
             ]);
             return $responseId;
     }
