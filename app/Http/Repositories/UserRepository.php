@@ -18,7 +18,7 @@ class UserRepository implements UserRepositoryInterface
         $name=$data->name;
         $email=$data->email;
         $password=Hash::make($data->password);
-        $responseId=User::createGetId([
+        $responseId=User::create([
                 "name"=>$name,
                 "email"=>$email,
                 "password"=>$password,
