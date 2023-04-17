@@ -7,7 +7,7 @@ class UserRepository implements UserRepositoryInterface
 {
     public function getAllUsers()
     {
-        return User::all();
+        return User::orderBy('id')->get();
     }
     public function getUserById($data)
     {
