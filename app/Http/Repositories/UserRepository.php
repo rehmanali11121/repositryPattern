@@ -23,7 +23,7 @@ class UserRepository implements UserRepositoryInterface
                 "email"=>$email,
                 "password"=>$password,
             ]);
-            return $responseId;
+            return !!$responseId;
     }
     public function updateUser($data)
     {
